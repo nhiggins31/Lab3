@@ -32,32 +32,23 @@ public class Deck {
 			}
 	}
 		
-		// one-arg constructor for jokers
-		public Deck(int numberOfJokers){ 
-			this();
-			
-		// Create an ArrayList of Cards, add each card
-				ArrayList<Card> MakingDeck = new ArrayList<Card>();
-				for (short i = 0; i <= 3; i++) {
-					eSuit SuitValue = eSuit.values()[i];			
-					for (short j = 0; j <= 12; j++) {
-						eRank RankValue = eRank.values()[j];				
-						Card NewCard = new Card(SuitValue,RankValue, (13 * i) + j+1);
-						MakingDeck.add(NewCard);
-						cards.add(new Card(eSuit.JOKER,eRank.JOKER,53));
-					}
-				}
-		
-		//	Set the instance variable
-		cards = MakingDeck;
-		ShuffleCards();
-
+		public Deck(int numberOfJokers) { 
+		this(); 
+		for(int i = 0; i < numberOfJokers; i++) {
+			cards.add(new Card(eSuit.JOKER, eRank.JOKER, 0)); 
+		}
+		ShuffleCards(); 
 	}
-
-
-	public Deck(ArrayList<Card> cards) {
-		super();
-		this.cards = cards;
+	
+		public Deck(int numberOfJokers, ArrayList<Card> Wilds) {
+		this(numberOfJokers);
+		for( Card dCard : cards) {
+			for (Card wCard : Wilds) {
+				if (dCard.getSuit() == wCard.getSuit() && dCard.getRank() == wCard.getRank()) {
+					dCard.setWild();
+				}
+			}
+		}
 	}
 
 
