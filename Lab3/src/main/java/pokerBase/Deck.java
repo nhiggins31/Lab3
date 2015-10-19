@@ -33,7 +33,8 @@ public class Deck {
 	}
 		
 		// one-arg constructor for jokers
-		public Deck(int Jokers){ 
+		public Deck(int numberOfJokers){ 
+			this();
 			
 		// Create an ArrayList of Cards, add each card
 				ArrayList<Card> MakingDeck = new ArrayList<Card>();
@@ -43,6 +44,7 @@ public class Deck {
 						eRank RankValue = eRank.values()[j];				
 						Card NewCard = new Card(SuitValue,RankValue, (13 * i) + j+1);
 						MakingDeck.add(NewCard);
+						cards.add(new Card(eSuit.JOKER,eRank.JOKER,53));
 					}
 				}
 		

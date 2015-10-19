@@ -42,7 +42,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
+		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.JOKER,0));
 		h.EvalHand();
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
@@ -70,7 +70,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.JACK,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
+		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.JOKER,0));
 		h.EvalHand();
 		
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
